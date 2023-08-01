@@ -85,36 +85,47 @@ class _FancyTabBarState extends State<FancyTabBar>
             children: <Widget>[
               TabItem(
                   selected: currentSelected == 0,
-                  iconData: Icons.home,
+                  iconData: Icons.stacked_line_chart,
                   title: AppLocalizations.of(context)!.tab_item_1,
                   callbackFunction: () {
                     setState(() {
-                      nextIcon = Icons.home;
+                      nextIcon = Icons.stacked_line_chart;
                       currentSelected = 0;
                     });
                     _initAnimationAndStart(_positionAnimation.value, -1);
                   }),
               TabItem(
                   selected: currentSelected == 1,
-                  iconData: Icons.search,
-                  title: AppLocalizations.of(context)!.tab_item_2,
+                  iconData: Icons.calendar_month,
+                  title: AppLocalizations.of(context)!.tab_item_1,
                   callbackFunction: () {
                     setState(() {
-                      nextIcon = Icons.search;
+                      nextIcon = Icons.calendar_month;
                       currentSelected = 1;
                     });
                     _initAnimationAndStart(_positionAnimation.value, 0);
                   }),
               TabItem(
                   selected: currentSelected == 2,
+                  iconData: Icons.note,
+                  title: AppLocalizations.of(context)!.tab_item_2,
+                  callbackFunction: () {
+                    setState(() {
+                      nextIcon = Icons.note;
+                      currentSelected = 2;
+                    });
+                    _initAnimationAndStart(_positionAnimation.value, 1);
+                  }),
+              TabItem(
+                  selected: currentSelected == 3,
                   iconData: Icons.settings,
                   title: AppLocalizations.of(context)!.tab_item_3,
                   callbackFunction: () {
                     setState(() {
                       nextIcon = Icons.settings;
-                      currentSelected = 2;
+                      currentSelected = 3;
                     });
-                    _initAnimationAndStart(_positionAnimation.value, 1);
+                    _initAnimationAndStart(_positionAnimation.value, 2);
                   })
             ],
           ),
@@ -126,7 +137,7 @@ class _FancyTabBarState extends State<FancyTabBar>
               heightFactor: 1,
               alignment: Alignment(_positionAnimation.value, 0),
               child: FractionallySizedBox(
-                widthFactor: 1 / 3,
+                widthFactor: 1 / 4,
                 child: Stack(
                   alignment: Alignment.center,
                   children: <Widget>[
