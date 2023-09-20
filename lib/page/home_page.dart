@@ -1,15 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:transtool/component/animated_bottom_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget{
-  final List<BarItem> items = [
-    BarItem(text: "text", iconData: Icons.home, color: Colors.indigo),
-    BarItem(text: "text", iconData: Icons.home, color: Colors.indigo),
-    BarItem(text: "text", iconData: Icons.home, color: Colors.indigo),
-    BarItem(text: "text", iconData: Icons.home, color: Colors.indigo),
-    BarItem(text: "text", iconData: Icons.home, color: Colors.indigo)
-  ];
+  late List<BarItem> items;
 
   @override
   State<StatefulWidget> createState() => HomePageState();
@@ -17,8 +12,15 @@ class HomePage extends StatefulWidget{
 
 class HomePageState extends State<HomePage> {
   int selectedBarIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    widget.items = [
+      BarItem(text: AppLocalizations.of(context)!.tab_item_1, iconData: Icons.home, color: Colors.indigo),
+      BarItem(text: AppLocalizations.of(context)!.tab_item_2, iconData: Icons.home, color: Colors.indigo),
+      BarItem(text: AppLocalizations.of(context)!.tab_item_3, iconData: Icons.home, color: Colors.indigo),
+      BarItem(text: AppLocalizations.of(context)!.tab_item_4, iconData: Icons.settings, color: Colors.indigo),
+    ];
     return Scaffold(
       body: AnimatedContainer(
         color: widget.items[selectedBarIndex].color,
