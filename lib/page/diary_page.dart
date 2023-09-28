@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SettingPage extends StatefulWidget {
+class DiaryPage extends StatefulWidget {
 
   @override
-  SettingPageState createState() => SettingPageState();
+  DiaryPageState createState() => DiaryPageState();
 }
 
-class SettingPageState extends State<SettingPage> {
+class DiaryPageState extends State<DiaryPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

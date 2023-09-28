@@ -23,12 +23,13 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
   Widget build(BuildContext context) {
     return Material(
       elevation: 10.0,
+      color: Colors.grey,
       child: Padding(
         padding: const EdgeInsets.only(
           bottom: 32.0,
           top: 16.0,
-          left: 16.0,
-          right: 16.0,
+          left: 15.0,
+          right: 15.0,
         ),
         child: Row(
           mainAxisSize: MainAxisSize.max,
@@ -68,7 +69,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
                 size: widget.barStyle.iconSize,
               ),
               SizedBox(
-                width: 10.0,
+                width: 8.0,
               ),
               AnimatedSize(
                 duration: widget.animationDuration,
@@ -94,7 +95,7 @@ class BarStyle {
   final double fontSize, iconSize;
   final FontWeight fontWeight;
 
-  BarStyle({this.fontSize = 18.0, this.iconSize = 32, this.fontWeight = FontWeight.w600});
+  BarStyle({this.fontSize = 16.0, this.iconSize = 32, this.fontWeight = FontWeight.w600});
 }
 
 class BarItem {
